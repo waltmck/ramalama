@@ -29,6 +29,8 @@
                 nativeBuildInputs =
                   (with pkgs; [ codespell shellcheck isort bats jq apacheHttpd ]) ++
                   (with pkgs.python3Packages; [ flake8 black pytest ]);
+                pyproject = true;
+                build-system = [ setuptools ];
               } // ramalamaOverrides)
           )
           { llamaCppOverrides.vulkanSupport = true; }
