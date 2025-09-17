@@ -30,6 +30,8 @@
                   (with pkgs; [ codespell shellcheck isort bats jq apacheHttpd ]) ++
                   (with pkgs.python3Packages; [ flake8 black pytest pyyaml argcomplete ]);
                 buildInputs = with pkgs.python3Packages; [ pyyaml ];
+                propagatedBuildInputs = with pkgs.python3Packages; [ pyyaml ];
+
                 pyproject = true;
                 build-system = with pkgs.python3Packages; [ setuptools ];
               } // ramalamaOverrides)
